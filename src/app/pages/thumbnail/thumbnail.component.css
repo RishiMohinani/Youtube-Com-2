@@ -1,0 +1,118 @@
+.bg-color {
+    background-color: #ebf6f5;
+}
+
+.breadcrumb {
+    margin: 1px 17px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.image-grid,
+.info-grid {
+    flex: 1 1 100%; /* Default to full width on small screens */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.image-grid img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+.image-grid img:last-child {
+    margin-bottom: 0; /* Remove margin from the last image */
+}
+
+img:hover {
+    transform: scale(1.07);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product-info {
+    padding: 10px 20px;
+    background-color: #fbe3e8;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;    
+    flex-direction: column; 
+}
+.product-info h3{
+    text-align: center;
+}
+
+.product-info h2 {
+    color: #333333;
+}
+
+.product-info p {
+    color: #666666;
+    line-height: 1.5;
+}
+
+.product-info ul {
+    list-style-type: circle;
+    padding: 5px;
+}
+
+.product-info ul li {
+    color: #666666;
+    margin-bottom: 5px;
+}
+
+.product-info button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    
+}
+
+.product-info button:hover {
+    background-color: #45a049;
+    
+}
+
+.price-button-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adjust the gap between the price and the button as needed */
+}
+
+.price-button-container p {
+    margin: 0; /* Remove margin for better alignment */
+}
+
+.price-button-container button {
+    margin-left: 20px; /* Adjust as needed */
+}
+
+@media (min-width: 768px) {
+    .image-grid,
+    .info-grid {
+        flex: 1; /* Each takes up equal space */
+    }
+
+    .container {
+        flex-wrap: nowrap; /* Do not wrap on larger screens */
+    }
+
+    .image-grid img {
+        height: 100%; /* Make the images fill the height */
+    }
+}

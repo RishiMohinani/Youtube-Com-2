@@ -1,0 +1,109 @@
+.navbar {
+    background-color: #000000; /* Background color for the navbar */
+    padding: 5px; /* Add padding to provide space around the logo and other elements */
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.navbar-list {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Toggler button styles */
+.navbar-toggler {
+    border: none;
+}
+.pointer-cursor {
+    cursor: pointer;
+  }
+  
+.navbar-toggler-icon {
+    background-color: #ffffff; /* Background color for the toggler icon */
+}
+
+/* Navigation links styles */
+.navbar-nav .nav-link {
+    color: #343a40; /* Link color */
+    font-weight: bold;
+    margin: 5px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #0056b3; /* Hover color for links */
+}
+
+.logo-head {
+    width: 60px;
+    border: 1px solid red;
+    border-radius: 5px;
+}
+
+.navbar-nav .nav-link.active {
+    color: #007bff; /* Active link color */
+    font-weight: bold;
+}
+
+/* Right align the logout button */
+.navbar-nav .nav-link-logout {
+    color: #dc3545; /* Logout button color */
+    padding: 5px;
+}
+
+.navbar-nav .nav-link-logout:hover {
+    color: #c82333; /* Hover color for logout button */
+}
+
+.sticky-navbar {
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 0;
+    z-index: 1030; /* Ensure the navbar stays above other content */
+    background-color: white; /* Set background color to prevent content from showing through */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for visual effect */
+    width: 100%; /* Ensure the navbar spans the full width */
+}
+
+.sticky-navbar .navbar-nav .nav-link {
+    color: #000; /* Adjust link color as needed */
+}
+
+.sticky-navbar .navbar-nav .nav-link.active {
+    font-weight: bold; /* Highlight active link */
+}
+
+.sticky-navbar .navbar-nav .nav-link-logout {
+    color: #f00; /* Optional: Change color of logout link */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 767.98px) {
+    .navbar-nav {
+        flex-direction: column; /* Stack items vertically on small screens */
+    }
+
+    .navbar-nav .nav-link, .navbar-nav .nav-link-logout {
+        width: 100%;
+        text-align: center;
+        padding: 0.5rem 0; /* Adjust padding for better touch targets */
+    }
+
+    .navbar-list {
+        flex-direction: column;
+    }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .logo {
+        width: 80px; /* Resize logo for smaller screens */
+        border: 1px solid red;
+    }
+}

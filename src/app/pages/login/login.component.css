@@ -1,0 +1,240 @@
+/* Basic */
+* {
+    margin: 0;
+    padding: 0;
+    
+    overflow-x: hidden; /* Prevent horizontal scrolling  */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center the content vertically */
+    height: 100vh; /* Full height of the viewport */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.row {
+    width: 100%;
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    transition: 0.5s;
+    /* padding: 20px; */
+    margin-bottom: 20px ;
+}
+
+.left-banner {
+    height: 100vh;
+    width: 100%;
+}
+
+.left-banner img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.login label {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    
+}
+
+.login button {
+    
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 10px;
+}
+
+.redirect-btn-success {
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+}
+
+.login1:hover {
+    background: #0056b3 !important;
+}
+
+.form-check {
+    margin-top: 2px;
+    width: 1%;
+}
+
+.rem-me {
+    display: flex;
+    align-items: center;
+}
+
+input[type="email"], input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.rem-me input {
+    width: 20px;
+    height: 20px;
+    padding: unset;
+    margin: unset;
+}
+
+.form-check-rem {
+    margin: 5px;
+}
+
+.rem-me label {
+    margin-bottom: 0 !important;
+    margin-left: 5px;
+}
+
+.rem-forgot {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    padding-left: 10px;
+    margin-left: 16px;
+}
+
+.fp {
+    margin-left: auto;
+    cursor: pointer;
+    color: #007bff;
+}
+
+.fp:hover {
+    text-decoration: underline;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: none;
+    z-index: 1000; /* Ensure the spinner is on top of all other elements */
+}
+
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #000;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+.login-form{
+    width: 100%;
+    max-width: 400px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+
+
+
+
+.password-container {
+    position: relative;
+    margin: auto;
+    width: 90%;
+}
+
+.password-container input {
+    width: 100%;
+    padding: 10px 40px 10px 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.toggle-password {
+    position: absolute;
+    top: 24px;
+    right: 10px;
+    display: flex;
+}
+
+.toggle-password i {
+    font-size: 18px;
+    
+}
+
+.toggle-password i:hover {
+    color: #666;
+}
+
+@media(max-width:989px){
+    .left-banner{
+        position: relative !important;
+    }
+    .container {
+        height: auto; /* Adjust height for smaller screens */
+    }
+    .login {
+        padding: 10px; /* Adjust padding for smaller screens */
+        position: absolute !important;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        background-color: #b1d7da;
+    }
+    .rem-forgot {
+        flex-direction: column; /* Stack remember me and forgot password vertically */
+        align-items: center;
+    }
+    .rem-me, .fp {
+        margin-bottom: 10px; /* Add margin for spacing */
+    }
+}
+/* Responsive styles */
+@media (max-width: 768px) {
+    .container {
+        height: auto; /* Adjust height for smaller screens */
+    }
+    
+    .rem-forgot {
+        flex-direction: column; /* Stack remember me and forgot password vertically */
+        align-items: center;
+    }
+    .rem-me, .fp {
+        margin-bottom: 10px; /* Add margin for spacing */
+    }
+}

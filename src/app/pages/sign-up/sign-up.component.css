@@ -1,0 +1,186 @@
+/* sign-up.component.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+img.img-thumbnail {
+    height: 100vh;
+    width: 100%;
+}
+
+.signup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    transition: 0.5s;
+}
+
+form {
+    width: 100%;
+    max-width: 400px;
+    margin: 10px;
+}
+
+label {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+
+}
+
+input[type="text"], input[type="email"], input[type="tel"], input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+@media(max-width:989px){
+    .left-banner{
+        position: relative ;
+    }
+    .container img {
+        height: auto; /* Adjust height for smaller screens */
+    }
+    .signup {
+        padding: 10px; /* Adjust padding for smaller screens */
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        background-color: #5d5ac7bf ; 
+    }
+    .rem-forgot {
+        flex-direction: column; /* Stack remember me and forgot password vertically */
+        align-items: center;
+    }
+    .rem-me, .fp {
+        margin-bottom: 10px; /* Add margin for spacing */
+    }
+}
+
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .col-6 {
+        width: 90%;
+    }
+
+    .container img {
+        width: 70%;
+    }
+
+    .signup {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    label {
+        font-size: 20px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
+
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: none;
+    z-index: 1000; /* Ensure the spinner is on top of all other elements */
+}
+
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #000;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.password-container {
+    position: relative;
+    margin: auto;
+    width: 90%;
+}
+
+.password-container input {
+    width: calc(100% - 40px);
+    width: 100%;
+    padding: 10px 40px 10px 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.toggle-password {
+    position: absolute;
+    top: 24px;
+    right: 10px;
+}
+
+.toggle-password i {
+    font-size: 18px;
+}
+
+.toggle-password i:hover {
+    color: #666;
+}

@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'demo-2';
+  urlPath: string = "";
+
+  constructor() {
+    const endPath = window.location.href.split('/').pop();
+    if(endPath){
+      this.urlPath = endPath
+    }
+  }
 }

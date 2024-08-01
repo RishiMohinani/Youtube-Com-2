@@ -1,0 +1,23 @@
+<div class="bg-color" *ngIf="data">
+    <hr>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="http://localhost:4200/home">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{ data.title }}</li>
+      </ol>
+    </nav>
+    <hr>
+    <div class="container">
+      <div class="image-grid">
+        <img [src]="data.image" alt="Product Image 1">
+        <img [src]="data.image2" alt="Product Image 2">
+      </div>
+      <div class="info-grid">
+        <div class="product-info" [innerHTML]="data.content"></div>
+        <div class="product-info">
+          <h3>Price: ₹{{ data.price }}</h3>
+          <button class="cart-btn">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>

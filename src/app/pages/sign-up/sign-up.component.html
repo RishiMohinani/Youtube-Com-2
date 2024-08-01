@@ -1,0 +1,107 @@
+<!-- <div class="row align-items-center">
+  <div class="col-lg-6 col-12">
+    <div class="left-banner">
+      <img src="../../../assets/5192479.jpg" alt="sign-up image" class="img-thumbnail">
+    </div>
+  </div>
+  <div class="col-lg-6 col-12">
+    <div class="signup">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <label for="checkbox" aria-hidden="true">Sign Up</label>
+
+        <input type="text" formControlName="username" placeholder="User Name" required>
+        <div *ngIf="username?.invalid && (username?.dirty || username?.touched)">
+          <div *ngIf="username?.errors?.['required']">Username is required.</div>
+          <div *ngIf="username?.errors?.['pattern']">Username must be 3-15 characters
+            long and can only contain letters, numbers, and underscores.</div>
+        </div>
+
+        <input type="email" formControlName="email" placeholder="E-Mail" required>
+        <div *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+          <div *ngIf="email?.errors?.['required']">Email is required.</div>
+          <div *ngIf="email?.errors?.['email']">Invalid email format.</div>
+        </div>
+
+        <input type="tel" formControlName="contactNumber" placeholder="Contact Number" required>
+        <div *ngIf="contactNumber?.invalid && (contactNumber?.dirty || contactNumber?.touched)">
+          <div *ngIf="contactNumber?.errors?.['required']">Contact number is required.</div>
+          <div *ngIf="contactNumber?.errors?.['pattern']">Contact number must be a valid 10-digit number.</div>
+        </div>
+
+        <input type="password" formControlName="password" placeholder="Password" required>
+        <div *ngIf="password?.invalid && (password?.dirty || password?.touched)">
+          <div *ngIf="password?.errors?.['required']">Password is required.</div>
+          <div *ngIf="password?.errors?.['pattern']">Password must be at least 8 characters long and contain at least
+            one letter and one number.</div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Submit</button>
+        <a href="/login">
+          <button type="button" class="btn btn-secondary">Login</button>
+        </a>
+      </form>
+    </div>
+  </div> -->
+
+  <!-- error handling improved -->
+
+  <div class="row align-items-center">
+    <div class="col-lg-6 col-12">
+      <div class="left-banner">
+        <img src="../../../assets/5192479.jpg" alt="sign-up image" class="img-thumbnail">
+      </div>
+    </div>
+    <div class="col-lg-6 col-12">
+      <div class="signup">
+        <form [formGroup]="Signupform" (ngSubmit)="onSubmit()">
+          <label for="checkbox" aria-hidden="true">Sign Up</label>
+  
+          <input type="text" formControlName="username" placeholder="User Name" required>
+          <div *ngIf="username?.invalid && (username?.dirty || username?.touched)">
+            <div *ngIf="username?.errors?.['required']">Username is required.</div>
+            <div *ngIf="username?.errors?.['pattern']">Username must be 3-15 characters
+              long and can only contain letters, numbers, and underscores.</div>
+          </div>
+  
+          <input type="email" formControlName="email" placeholder="E-Mail" required>
+          <div *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+            <div *ngIf="email?.errors?.['required']">Email is required.</div>
+            <div *ngIf="email?.errors?.['email']">Invalid email format.</div>
+          </div>
+  
+          <input type="tel" formControlName="contactNumber" placeholder="Contact Number" required maxlength="10">
+          <div *ngIf="contactNumber?.invalid && (contactNumber?.dirty || contactNumber?.touched)">
+          <div *ngIf="contactNumber?.errors?.['required']">Contact number is required.</div>
+          <div *ngIf="contactNumber?.errors?.['pattern']">Contact number must be a valid 10-digit number.</div>
+          <div *ngIf="contactNumber?.errors?.['maxlength']">Contact number cannot exceed 10 digits.</div>
+          </div>
+
+          <div class="password-container">
+            <input [type]="showPassword ? 'text' : 'password'" formControlName="password" placeholder="Password" required>
+            <span class="toggle-password" (click)="togglePasswordVisibility()">
+              <i [class]="showPassword ? 'fa fa-eye-slash' : 'fa fa-eye'" aria-hidden="true"></i>
+            </span>
+          
+            <div *ngIf="password?.invalid && (password?.dirty || password?.touched)">
+              <div *ngIf="password?.errors?.['required']">Password is required.</div>
+              <div *ngIf="password?.errors?.['pattern']">
+                Password must be at least 8 characters long and contain at least one letter and one number.
+              </div>
+            </div>
+          </div>
+          
+  
+          <button type="submit" class="btn btn-primary" [disabled]="Signupform.invalid">Submit</button>
+          <a href="/login">
+            <button type="button" class="btn btn-secondary">Login</button>
+          </a>
+        </form>
+        <div *ngIf="error$ | async as error">
+          <p class="text-danger">Error: {{ error }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="loading" class="loading-spinner">
+    <div class="spinner"></div>
+  </div>

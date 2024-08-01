@@ -1,0 +1,54 @@
+<div class="row align-items-center">
+    <div class="col-lg-6 col-md-12 col-12">
+      <div class="left-banner">
+        <img src="../../../assets/pexels-pixabay-531880.jpg" alt="">
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-12 col-12">
+      <div class="login">
+        <form [formGroup] ="loginForm" (ngSubmit)="onLogin()" class="login-form">
+          <label for="chk" aria-hidden="true">Login</label>
+          
+          <input type="email" formControlName="email" placeholder="E-Mail" required>
+          <div *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+            <div *ngIf="email?.errors?.['required']">Email is required.</div>
+            <div *ngIf="email?.errors?.['email']">Invalid email format.</div>
+          </div>
+          
+          <div class="password-container">
+            <input [type]="showPassword ? 'text' : 'password'" formControlName="password" placeholder="Password" required>
+            <span class="toggle-password" (click)="togglePasswordVisibility()">
+              <i [class]="showPassword ? 'fa fa-eye-slash' : 'fa fa-eye'" aria-hidden="true"></i>
+            </span>
+          
+            <div *ngIf="password?.invalid && (password?.dirty || password?.touched)">
+              <div *ngIf="password?.errors?.['required']">Password is required.</div>
+              <div *ngIf="password?.errors?.['pattern']">
+                Password must be at least 8 characters long and contain at least one letter and one number.
+              </div>
+            </div>
+          </div>
+          
+          <div class="rem-forgot">
+            <div class="rem-me">
+              <input class="form-check" type="checkbox" id="flexCheckDefault" formControlName="rememberMe">
+              <span class="form-check-rem" for="flexCheckDefault">Remember Me</span>
+            </div>
+            <span class="form-check-rem">Forgot Password</span>
+          </div>
+          <a href="/home">
+          <button class="login1" type="submit" [disabled]="loginForm.invalid">Login</button>
+          </a>
+          <a href="/signUp">
+            <button type="button" class="login1">Sign-up</button>
+          </a>
+          <div *ngIf="errorMessage" class="error-message">
+            {{ errorMessage }}
+          </div>
+        </form> 
+      </div>
+    </div>
+  </div>
+  <div *ngIf="loading" class="loading-spinner">
+    <div class="spinner"></div>
+  </div>
